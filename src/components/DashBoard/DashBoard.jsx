@@ -13,6 +13,7 @@ import {
 } from "react-icons/bs";
 import "./DashBoard.css";
 import Card from "../Card/Card";
+
 const DashBoard = () => {
   const isStatus = localStorage.getItem("group") === "status";
   const isPriority = localStorage.getItem("group") === "priority";
@@ -41,13 +42,11 @@ const DashBoard = () => {
                     <div
                       className="imageContainer relative"
                       style={{
-
                         width: "10px",
                         height: "15px",
                         display: "inline-block",
                       }}
-                    >
-                    </div>
+                    ></div>
                   ) : isStatus ? (
                     <div
                       className="cardTitle"
@@ -60,20 +59,19 @@ const DashBoard = () => {
                     >
                       {element[index].title === "Backlog" ? (
                         <BiLoader style={{ fontSize: "13px" }} />
-                      )
-                        : element[index].title === "Todo" ? (
-                          <FaRegCircle
-                            style={{ fontSize: "13px", color: "#ddeded" }}
-                          />
-                        ) : element[index].title === "In progress" ? (
-                          <BiAdjust
-                            style={{ fontSize: "13px", color: "#f2d750" }}
-                          />
-                        ) : element[index].title === "Done" ? (
-                          <BsCheckCircleFill />
-                        ) : (
-                          <IoMdCloseCircleOutline />
-                        )}
+                      ) : element[index].title === "Todo" ? (
+                        <FaRegCircle
+                          style={{ fontSize: "13px", color: "#ddeded" }}
+                        />
+                      ) : element[index].title === "In progress" ? (
+                        <BiAdjust
+                          style={{ fontSize: "13px", color: "#f2d750" }}
+                        />
+                      ) : element[index].title === "Done" ? (
+                        <BsCheckCircleFill />
+                      ) : (
+                        <IoMdCloseCircleOutline />
+                      )}
                     </div>
                   ) : isPriority ? (
                     <div
@@ -85,11 +83,10 @@ const DashBoard = () => {
                       }}
                     >
                       {element[index].title === "Low" ||
-                        element[index].title === "Medium" ||
-                        element[index].title === "High" ? (
+                      element[index].title === "Medium" ||
+                      element[index].title === "High" ? (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-
                           width="24"
                           height="24"
                           fill="currentColor"
@@ -104,7 +101,7 @@ const DashBoard = () => {
                             height="5"
                             opacity={
                               element[index].title === "Medium" ||
-                                element[index].title === "High"
+                              element[index].title === "High"
                                 ? 1
                                 : 0.25
                             }
@@ -154,7 +151,14 @@ const DashBoard = () => {
         {isStatus && (
           <>
             <div className="dashCardHeading flex-sb">
-              <div className="leftView" style={{ fontSize: "15px", marginRight: "90px", wordSpacing: "4px" }}>
+              <div
+                className="leftView"
+                style={{
+                  fontSize: "15px",
+                  marginRight: "90px",
+                  wordSpacing: "4px",
+                }}
+              >
                 <div
                   className="cardTitle"
                   style={{
@@ -166,7 +170,10 @@ const DashBoard = () => {
                 >
                   <BsFillCheckCircleFill style={{ color: "blue" }} />
                 </div>{" "}
-                <span style={{ fontSize: "13px", fontWeight: "lighter" }}>Done</span> <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
+                <span style={{ fontSize: "13px", fontWeight: "lighter" }}>
+                  Done
+                </span>{" "}
+                <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
               </div>
               <div className="rightView">
                 <AiOutlinePlus />{" "}
@@ -174,7 +181,14 @@ const DashBoard = () => {
               </div>
             </div>
             <div className="dashCardHeading flex-sb">
-              <div className="leftView" style={{ fontSize: "15px", marginRight: "60px", wordSpacing: "4px" }}>
+              <div
+                className="leftView"
+                style={{
+                  fontSize: "15px",
+                  marginRight: "60px",
+                  wordSpacing: "4px",
+                }}
+              >
                 <div
                   className="cardTitle"
                   style={{
@@ -186,7 +200,10 @@ const DashBoard = () => {
                 >
                   <MdCancel style={{ color: "grey" }} />
                 </div>{" "}
-                <span style={{ fontSize: "13px", fontWeight: "lighter" }}>Canceled</span> <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
+                <span style={{ fontSize: "13px", fontWeight: "lighter" }}>
+                  Canceled
+                </span>{" "}
+                <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
               </div>
               <div className="rightView">
                 <AiOutlinePlus />{" "}
